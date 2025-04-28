@@ -1,0 +1,45 @@
+/* src/components/Navbar.css */
+
+.navbar {
+    background: rgba(15, 32, 39, 0.8); /* Fondo semitransparente */
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+}
+
+.navbar-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.navbar-item {
+}
+
+.navbar-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.navbar-link:hover {
+    color: #00ffcc;
+    transform: scale(1.1);
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .navbar-list {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
