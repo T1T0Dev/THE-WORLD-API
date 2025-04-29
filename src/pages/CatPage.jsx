@@ -1,59 +1,35 @@
-import React from 'react'
-// Endpoint para obtener un random fact
-const CAT_ENDPOINT_RANDOM_FACT = 'https://catfact.ninja/fact';
-import { useState, useEffect } from 'react';
-
-
+import React, { useState, useEffect } from 'react'
+import './styles/CatPage.css'
+import { CAT_ENDPOINT_RANDOM_FACT } from '../routes/routes';
 
 export const CatPage = () => {
-
-    const [catFact, setCatFact] = useState();
-
+  const [catFact, setCatFact] = useState();
   const [catImage, setCatImage] = useState();
-  
+
   const getRandomFact = () => {
-    fetch (CAT_ENDPOINT_RANDOM_FACT)
-    .then ((res) => res.json())
-    .then ((data) => {
-      // Desestructurando el objeto data
-      const { fact } = data;
-      setCatFact(fact);
-    })
+    fetch(CAT_ENDPOINT_RANDOM_FACT)
+      .then(res => res.json())
+      .then(({ fact }) => setCatFact(fact));
   }
 
-  // Se ejecuta una vez al cargar la página
-  useEffect(getRandomFact,[]);
+  useEffect(getRandomFact, []);
 
-
-  //Para recuperar la imagen cada vez que tengamos un catFact nuevo
   useEffect(() => {
+    if (!catFact) return;
 
-    // Si no hay catFact, no se ejecuta el código
-    if(!catFact) return
-
-    //Toma las tres primeras palabras del catFact
-    const threeFirstWords = catFact?.split(' ', 3).join(' ');
-    console.log(threeFirstWords);
-
+    const threeFirstWords = catFact.split(' ', 3).join(' ');
 
     fetch(`https://cataas.com/cat/says/${threeFirstWords}?size=small&color=white&json=true`)
-    .then((res) => res.json())
-    .then((data) => {
-      const {url} = data;
-      setCatImage(url);
-    })
+      .then(res => res.json())
+      .then(({ url }) => setCatImage(url));
   }, [catFact]);
 
-
   return (
-
-    <div>
-      <h1>Random Cat Fact</h1>
-      {catFact && <h2>{catFact}</h2>}
-      {catImage && <img style={{ width: '50%' }} src={catImage} alt="cat" />}
-      <br></br>
-      <button onClick={getRandomFact}>Nueva Factura </button>
+    <div className="cat-container">
+      <h1 className="cat-title">🐾 Random Cat Fact</h1>
+      {catFact && <p className="cat-fact">"{catFact}"</p>}
+      {catImage && <img className="cat-img" src={catImage} alt="cat" />}
+      <button className="cat-btn" onClick={getRandomFact}>Meow otra vez 🐱</button>
     </div>
-
-  )
+  );
 }

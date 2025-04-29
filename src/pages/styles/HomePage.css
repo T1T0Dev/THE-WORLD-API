@@ -1,70 +1,94 @@
+/* src/components/styles/HomePage.css */
+
+/* Animación de fade-in + slide-up */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .home-container {
+    height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, #000000 0%, #ffffff 100%);
-    min-height: 100vh;
-    border-radius: 12px;
-    color: #000000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    padding: 0 2rem;
+    backdrop-filter: blur(6px); /* Mejor blur */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
+    animation: fadeSlideUp 1.5s ease-out forwards;
 }
-.home-container {
-    width: 100%;
-    background: #ffffff;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 .home-title {
     font-size: 3.5rem;
-    color: #000000;
+    font-weight: 900;
     margin-bottom: 1rem;
-    font-weight: 800;
-    text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.3);
+    background: linear-gradient(
+        90deg,
+        #ff0000,   /* Rojo Pokémon */
+        #ffcc00,   /* Amarillo Pokémon */
+        #00ff99,   /* Verde Rick and Morty */
+        #ff7f50    /* Naranja coral tipo gatitos */
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .home-subtitle {
     font-size: 1.8rem;
-    color: #333333;
-    margin-bottom: 1rem;
     font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #eeeeee;
 }
 
 .home-description {
     font-size: 1.2rem;
-    color: #666666;
-    max-width: 700px;
-    line-height: 1.8;
-    margin-bottom: 2rem;
+    max-width: 800px;
+    color: #cccccc;
 }
 
+.profile-pic {
+    width: 60px; /* Tamaño ajustable */
+    height: 60px;
+    border-radius: 50%; /* Redondito como un avatar */
+    object-fit: cover; /* Que no se deforme */
+    border: 3px solid #00ff99; /* Portal vibes */
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.6); /* Un glow lindo */
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.1) rotate(5deg); /* Pequeña animación al pasar el mouse */
+}
+
+
+/* Responsive bonito */
 @media (max-width: 768px) {
     .home-title {
         font-size: 2.5rem;
     }
-
     .home-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
-
     .home-description {
         font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .home-title {
-        font-size: 2rem;
-    }
-
-    .home-subtitle {
-        font-size: 1.2rem;
-    }
-
-    .home-description {
-        font-size: 0.9rem;
     }
 }

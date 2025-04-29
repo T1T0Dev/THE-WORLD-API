@@ -1,0 +1,40 @@
+.background-home {
+    background: url('./assets/rickandmorty.jpg') center center / cover no-repeat fixed;
+    min-height: 120vh;
+ 
+
+}
+
+.background-pokemon {
+    background: url('./assets/pokemon.jpg') center center / cover no-repeat fixed;
+    min-height: 120vh;
+  
+
+}
+
+.background-rick {
+    background: url('./assets/rickandmorty.jpg') center center / cover no-repeat fixed;
+    min-height: 100vh;
+  
+
+}
+
+.background-gatos {
+    background: url('./assets/gatos.jpg') center center / cover no-repeat fixed;
+    min-height: 150vh;
+}
+
+/* Opcional: le podés meter overlay también si querés */
+.background-home::before,
+.background-pokemon::before,
+.background-rick::before,
+.background-gatos::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4); /* oscurecimiento para mejor lectura */
+    z-index: -1;
+}

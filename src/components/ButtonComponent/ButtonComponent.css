@@ -1,0 +1,38 @@
+/* Estilos para el botón */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+.button-component {
+  margin-top:50px;
+  background: linear-gradient(145deg, #2c7e4a, #1d5c3d); /* Fondo con gradiente */
+  color: #f0f0f0;
+  border: 2px solid #42f560; /* Borde verde */
+  border-radius: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10rem;
+  padding: 10px 20px;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px #42f560, 0 0 20px #42f560; /* Sombra verde */
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.button-component:hover {
+  background: linear-gradient(145deg, #1d5c3d, #2c7e4a); /* Invertir gradiente en hover */
+  transform: translateY(-5px); /* Efecto de levantar el botón */
+  box-shadow: 0 0 30px #42f560, 0 0 50px #42f560; /* Sombra más intensa al hacer hover */
+}
+
+.button-component:active {
+  transform: translateY(2px); /* Efecto al hacer clic */
+  box-shadow: none;
+}
+
+.title-button{
+  font-size: 1.8rem; /* Tamaño de fuente del texto dentro del botón */
+  color: #fff; /* Color del texto */
+  text-shadow: 0 0 5px #42f560; /* Sombra del texto */
+  margin: 0; /* Sin margen */
+  padding: 0; /* Sin padding */
+  font-weight: bold; /* Negrita */
+}
