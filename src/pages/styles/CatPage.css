@@ -9,6 +9,7 @@
     font-family: 'Quicksand', sans-serif;
     border: 2px solid #ffb6c1;
     animation: fadeIn 1s ease-in;
+    width: 90%; /* Ajuste dinámico del contenedor */
 }
 
 .cat-title {
@@ -65,10 +66,14 @@
     }
 }
 
-/* Responsive */
-@media (max-width: 480px) {
+/* Responsive para dispositivos pequeños */
+@media (max-width: 768px) {
+    .cat-container {
+        padding: 1.5rem; /* Menos padding en pantallas más pequeñas */
+    }
+
     .cat-title {
-        font-size: 1.8rem;
+        font-size: 2rem; /* Ajustamos el tamaño de la fuente */
     }
 
     .cat-fact {
@@ -77,7 +82,12 @@
     }
 
     .cat-btn {
-        font-size: 0.9rem;
-        padding: 0.7rem 1.2rem;
+        margin:2vh 0;
+        font-size: 2rem; /* Botón más grande en pantallas pequeñas */
+        padding: 0.8rem 1.3rem;
+    }
+
+    .cat-img {
+        width: 100%; /* Ajustamos la imagen en pantallas más pequeñas */
     }
 }

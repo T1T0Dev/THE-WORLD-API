@@ -36,3 +36,27 @@
   padding: 0; /* Sin padding */
   font-weight: bold; /* Negrita */
 }
+
+@media (max-width: 768px) {
+  .button-component {
+    font-size: 4rem; /* Tamaño más manejable en móviles */
+    padding: 8px 16px;
+    margin-top: 30px;
+  }
+
+  .title-button {
+    font-size: 1.2rem; /* Texto interno también más chico */
+  }
+}
+
+@media (max-width: 480px) {
+  .button-component {
+    font-size: 2rem;
+    padding: 6px 12px;
+    margin-top: 20px;
+  }
+
+  .title-button {
+    font-size: 1rem;
+  }
+}
