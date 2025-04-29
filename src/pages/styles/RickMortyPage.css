@@ -1,0 +1,25 @@
+.title-rick {
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+    font-family: Orbitron, sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 0 0 5px #42f560;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: linear-gradient(145deg, #2c7e4a, #1d5c3d); 
+    border-radius: 8px;
+    box-shadow: 0 0 10px #42f560, 0 0 20px #42f560; 
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 480px) {
+    .title-rick {
+        font-size: 1.8rem;
+        padding: 0.7rem;
+        margin-bottom: 1.5rem;
+        border-radius: 6px;
+        box-shadow: 0 0 6px #42f560, 0 0 10px #42f560;
+    }
+}

@@ -1,8 +1,10 @@
 import {Container,Row,Col} from 'react-bootstrap';
 import {useState,useEffect} from 'react';
-import {CharacterCard} from '../components/CharacterCard';
-import {ButtonComponent} from '../components/ButtonComponent';
+import {CharacterCard} from '../components/CharacterCard/CharacterCard';
+import {ButtonComponent} from '../components/ButtonComponent/ButtonComponent';
 import { RICK_MORTY_API_URL } from '../routes/routes';
+import './styles/RickMortyPage.css'; // Importa el archivo CSS para estilos adicionales
+//React Bootstrap para esta Pagina
 
 
 export const RickMortyPage = () => {
@@ -33,26 +35,27 @@ export const RickMortyPage = () => {
     <div className="App">
 
     <Container>
-      <h1>PERSONAJES DE RICK Y MORTY</h1>
+      <h1 className='title-rick'>
+      CASTING DE PERSONAJES
+      </h1>
 
       <Row>
-        {/*Mapeamos los personajes */}
-        {characters.map(char => (
-          <Col key={char.id} xs={12} sm={6} md={4} lg={3}>
-
-            {/* Pasamos a traves Props el caracter*/}
-            <CharacterCard character={char} />
-          </Col>
-        ))}
+        {characters
+          .filter(char => char.name.trim().split(' ').length === 2)
+          .slice(0, 8)
+          .map(char => (
+            <Col key={char.id} xs={12} sm={6} md={4} lg={3}>
+              <CharacterCard character={char} />
+            </Col>
+          ))}
       </Row>
 
+      
+
       <ButtonComponent onClick={()=>{
-        console.log("Cargando mas personajes");
         loadMore();
       }} 
-      variant="primary"
-      >
-        Ver mas personajes
+      variant="primary">
       </ButtonComponent>
     </Container>
 

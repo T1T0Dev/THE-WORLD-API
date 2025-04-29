@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+@keyframes radioactive-glow {
+  0% {
+    box-shadow: 0 0 10px #42f560, 0 0 20px #42f560, 0 0 30px #42f560;
+  }
+  50% {
+    box-shadow: 0 0 20px #42f560, 0 0 40px #00ff84, 0 0 60px #00ffaa, 0 0 80px lime;
+  }
+  100% {
+    box-shadow: 0 0 10px #42f560, 0 0 20px #42f560, 0 0 30px #42f560;
+  }
+}
+
+.card {
+  overflow: hidden;
+  max-height: 70px;
+  transition: max-height 0.5s ease, box-shadow 0.3s ease;
+  border: 2px solid #42f560;
+  background: radial-gradient(circle, #1a1f1d 0%, #0f0f0f 100%);
+  color: #f0f0f0;
+  border-radius: 16px;
+  box-shadow: 0 0 10px #42f560, 0 0 20px #42f560, 0 0 30px #42f560;
+  cursor: pointer;
+  animation: radioactive-glow 3s infinite;
+}
+
+.card.open {
+  max-height: 850px;
+  animation: radioactive-glow 1.5s infinite alternate;
+}
+
+.card-header {
+  background: linear-gradient(145deg, #2c7e4a, #1d5c3d);
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+}
+
+.card-body {
+  padding: 1rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease, max-height 0.3s ease;
+}
+
+.card.open .card-body {
+  opacity: 1;
+  max-height: none;
+  height: 550px;
+  box-shadow: 0 0 30px #42f560, 0 0 50px #42f560;
+}
+
+.card-img-top {
+  border-radius: 8px;
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+  transition: height 0.3s ease, transform 0.3s ease;
+}
+
+.card.open .card-img-top {
+  height: 250px;
+}
+
+.card-text {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-family: 'Segoe UI', sans-serif;
+  color: #f8f8f8;
+}
+
+.card-text strong {
+  color: #9affc9;
+  font-weight: bold;
+}

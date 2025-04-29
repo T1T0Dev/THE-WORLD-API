@@ -1,6 +1,7 @@
 import React from 'react'
 import { usePokemonSearch } from '../hooks/usePokemonSearch'
 import { useState } from 'react';
+import './styles/PokePage.css'; // Importa el archivo CSS para estilos adicionales
 
 export const PokePage = () => {
 
@@ -12,24 +13,28 @@ export const PokePage = () => {
   const{pokemonImage,error} = usePokemonSearch(pokemonName);
 
   return (
-    <div>
-      <h1>Mini Pokédex 🔥</h1>
-      <input
-        type="text"
-        value={pokemonName}
-        onChange={(e) => setPokemonName(e.target.value)}
-        placeholder="Escribí el nombre de un Pokémon"
-        
-      />
-      <br />
-      <div>
-        {error && <p>{error}</p>}
-        {pokemonImage && (
-          <img
-            src={pokemonImage}
-            alt={pokemonName}
-          />
-        )}
+    <div className='pokedex-wrapper'>
+      <div className='pokedex-container'>
+        <h1 className='title-poke'>Mini Pokédex 🔥</h1>
+        <input
+          type="text"
+          value={pokemonName}
+          onChange={(e) => setPokemonName(e.target.value)}
+          placeholder="Escribí el nombre de un Pokémon"
+          className='input-poke'
+          
+        />
+        <br />
+        <div>
+          {error && <p className='error-poke'>{error}</p>}
+          {pokemonImage && (
+            <img
+              src={pokemonImage}
+              alt={pokemonName}
+              className='image-poke'
+            />
+          )}
+        </div>
       </div>
     </div>
 
