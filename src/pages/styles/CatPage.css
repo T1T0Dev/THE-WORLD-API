@@ -82,12 +82,48 @@
     }
 
     .cat-btn {
+<<<<<<< HEAD
         margin:2vh 0;
         font-size: 2rem; /* Botón más grande en pantallas pequeñas */
+=======
+        font-size: 1rem;
+>>>>>>> 7571955c29d8ae406b49dce7f958a265acd51a0a
         padding: 0.8rem 1.3rem;
     }
 
     .cat-img {
+<<<<<<< HEAD
         width: 100%; /* Ajustamos la imagen en pantallas más pequeñas */
+=======
+        width: 70%; /* Ajustamos la imagen en pantallas más pequeñas */
+    }
+}
+
+/* Responsive para dispositivos muy pequeños (celulares) */
+@media (max-width: 480px) {
+    .cat-container {
+        max-width: 100%; /* Usamos el 100% del ancho disponible */
+        margin: 4vh auto; /* Ajuste en el margen superior */
+        padding: 1rem; /* Reducción de padding */
+    }
+
+    .cat-title {
+        font-size: 1.8rem; /* Menor tamaño de fuente para móviles */
+    }
+
+    .cat-fact {
+        font-size: 0.9rem; /* Ajuste en el tamaño del texto */
+        padding: 0.6rem;
+    }
+
+    .cat-btn {
+        font-size: 0.9rem; /* Botón más pequeño en móviles */
+        padding: 0.7rem 1.2rem;
+    }
+
+    .cat-img {
+        width: 90%; /* Imagen más grande en móviles */
+        max-width: 200px; /* Limitar el tamaño máximo */
+>>>>>>> 7571955c29d8ae406b49dce7f958a265acd51a0a
     }
 }
