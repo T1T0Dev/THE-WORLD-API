@@ -9,6 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function AppContent() {
+  // useLocation es un hook que nos permite acceder a la ubicación actual de la aplicación
+  // y así poder cambiar el fondo de la página según la ruta actual
+
   const location = useLocation();
 
   let backgroundClass = '';
@@ -23,8 +26,12 @@ function AppContent() {
   }
 
   return (
+
+    // Aquí se define el fondo de la página según la ruta actual
+    // y se renderiza el componente Navbar y las rutas de la aplicación.
     <div className={backgroundClass}>
-      <Navbar />
+
+      <Navbar currentPath={location.pathname} />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/poke' element={<PokePage />} />

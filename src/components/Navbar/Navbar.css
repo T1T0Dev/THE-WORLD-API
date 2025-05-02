@@ -1,122 +1,53 @@
-/* src/components/Navbar.css */
 
-/* Animación futurista 👾 */
-@keyframes cyberSlideIn {
-    0% {
-      opacity: 0;
-      transform: translateY(20px) scale(0.98);
-      filter: blur(4px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
-    }
-  }
-  
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 1rem 2rem;
-    background: rgba(5, 5, 25, 0.75);
-    backdrop-filter: blur(18px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-    border-bottom: 1px solid rgba(0, 255, 200, 0.12);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-  
-    /* Nueva animación elegante 🚀 */
-    animation: cyberSlideIn 0.6s ease-out both;
-  }
-  
-  .navbar-list {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.2rem;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .navbar-item {
-    position: relative;
-  }
-  
-  .navbar-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: 0.7px;
-    padding: 0.6rem 1.1rem;
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    z-index: 1;
-  }
-  
-  /* Efecto glow moviéndose */
-  .navbar-link::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(0, 255, 213, 0.15), transparent 60%);
-    opacity: 0;
-    transform: scale(0.7);
-    transition: all 0.5s ease;
-    z-index: -1;
-  }
-  
-  .navbar-link:hover::before {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-  
-  .navbar-link:hover {
-    color: #00ffd5;
-    transform: scale(1.05);
-  }
-  
-  
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 1rem 1.2rem;
-    }
-  
-    .navbar-list {
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-      gap: 0.8rem;
-      margin-top: 0.5rem;
-    }
-  
-    .navbar-link {
-      width: 100%;
-      text-align: left;
-      font-size: 1rem;
-      padding: 0.5rem 0;
-      border: none;
-      background: none;
-      border-radius: 0;
-      color: #ffffff;
-    }
-  
-    .navbar-link:hover {
-      color: #00ffd5;
-      transform: none;
-    }
-  }
-  
-  
+
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+}
+
+.navbar-link {
+  text-decoration: none;
+  font-size: 24px;
+  color: white;
+  transition: transform 0.2s ease;
+}
+
+.navbar-link:hover {
+  transform: scale(1.2);
+}
+
+/* 🎯 Colores dinámicos por sección con opacidad */
+.navbar-home {
+  background-color: rgba(255, 255, 255, 0.15); /* Blanco opaco suave */
+}
+
+.navbar-pokemon {
+  background-color: rgba(255, 0, 0, 0.35); /* Rojo Pokéball opaco */
+}
+
+.navbar-cat {
+  background-color: rgba(255, 165, 0, 0.35); /* Naranja gatuno opaco */
+}
+
+.navbar-rick {
+  background-color: rgba(0, 255, 0, 0.25); /* Verde portal Rick & Morty */
+}
