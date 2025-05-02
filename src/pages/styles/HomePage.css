@@ -43,7 +43,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
 }
 
 @keyframes gradientMove {
@@ -72,11 +71,12 @@
     object-fit: cover; /* Que no se deforme */
     border: 3px solid #00ff99; /* Portal vibes */
     box-shadow: 0 0 10px rgba(0, 255, 153, 0.6); /* Un glow lindo */
-    transition: transform 0.3s ease;
+    animation:floaty 3s ease-in-out infinite;
 }
 
-.profile-pic:hover {
-    transform: scale(1.1) rotate(5deg); /* Pequeña animación al pasar el mouse */
+@keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
 

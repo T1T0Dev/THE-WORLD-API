@@ -1,5 +1,5 @@
 .background-home {
-    background: url('./assets/rickandmorty.jpg') center center / cover no-repeat fixed;
+    background: url('./assets/home.png') center center / cover no-repeat fixed;
     min-height: 100vh;
  
 
@@ -14,7 +14,7 @@
 
 .background-rick {
     background: url('./assets/rickandmorty.jpg') center center / cover no-repeat fixed;
-    min-height: 170vh;
+    min-height: 120vh;
   
 
 }
